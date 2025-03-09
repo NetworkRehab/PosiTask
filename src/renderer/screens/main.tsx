@@ -6,6 +6,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from 'renderer/components/ui/alert'
+import { TodoList } from 'renderer/components/TodoList'
 
 // The "App" comes from the context bridge in preload/index.ts
 const { App } = window
@@ -19,7 +20,7 @@ export function MainScreen() {
   const userName = App.username || 'there'
 
   return (
-    <main className="flex flex-col items-center justify-center h-screen bg-black">
+    <main className="flex flex-col items-center justify-center h-screen bg-gray-800 text-white">
       <Alert className="mt-5 bg-transparent border-transparent text-accent w-fit">
         <AlertTitle className="text-5xl text-teal-400">
           Hi, {userName}!
@@ -33,6 +34,7 @@ export function MainScreen() {
           </span>
         </AlertDescription>
       </Alert>
+      <TodoList />
     </main>
   )
 }
